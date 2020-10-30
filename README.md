@@ -41,11 +41,13 @@ or
 npm start
 ```
 On Pipdrive create a new deal
+![new pipedrive deal](./src/images/new-deal.png)
 
 And set then as won 
+![won a pipedrive deal](./src/images/won-deal.png)
 
 On Bling, go to 'Pedidos de Venda' and await to new integrated deals
-
+![bling order](./src/images/integrated-order.png)
 
 To see the already integrated deals, go to route
 ```bash
