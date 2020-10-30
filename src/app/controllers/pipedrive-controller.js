@@ -16,6 +16,7 @@ class PipedriveController {
             input['limit'] = 50;
             var pagination = null;
             var again = false;
+            // Iterates and fetch the pipedrive API then no more data is available
             do {
                 var response = await lib.DealsController.getAllDeals(input);
                 pagination = response.additional_data.pagination;
