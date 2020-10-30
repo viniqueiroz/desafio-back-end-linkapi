@@ -11,7 +11,7 @@ let should = chai.should();
 
 chai.use(chaiHttp);
 
-describe('Deals', () => {
+describe('Deals', (done) => {
 
   before((done) => { //Before the tests we empty the database
     Deal.collection.drop({}, (err) => {
@@ -61,21 +61,6 @@ describe('Deals', () => {
     });
   });
 
-  describe('/GET deals reports', () => {
-    it('it should GET all the deals grouped by date', (done) => {
-      chai.request(server)
-        .get('/deals/reports')
-        .end((err, res) => {
-          res.should.have.status(200);
-          res.body.should.be.a('array');
-          done();
-        });
-    });
-  });
-
-});
-
-describe('Pipedrive', () => {
   describe('/GET deals reports', () => {
     it('it should GET all the deals grouped by date', (done) => {
       chai.request(server)
