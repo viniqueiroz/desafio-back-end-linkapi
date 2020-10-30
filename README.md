@@ -23,11 +23,13 @@ then set the variables
 
 
 ```bash
+PORT # App default port
 PIPEDRIVE_API_TOKEN # Pipedrive Api Token for fetch deals
 BLING_API_KEY # Bling Api Key for post new Orders
 BLING_API_URL # Base Api Url of Bling
 DATABASE_CONNECTION # Your mongodb connection url
 TEST_DATABASE_CONNECTION # Your mongodb connection url to test database
+INTEGRATION_FREQUENCY # Cron style frequency configuration
 ```
 
 ## Usage
