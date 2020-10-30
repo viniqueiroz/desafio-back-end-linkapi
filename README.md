@@ -106,6 +106,16 @@ Return a list of amount integrated grouped by day
     }
 ]
 ```
+## Tests
+Run the test command
+```bash
+yarn test
+```
+or
+
+```bash
+npm test
+```
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
