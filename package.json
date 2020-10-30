@@ -1,0 +1,27 @@
+{
+  "name": "linkapi-desafio-back-end",
+  "version": "1.0.0",
+  "description": "Desafio para a Vaga de Back End na LinkAPI",
+  "main": "index.js",
+  "author": "Vinicius Moura",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "mocha src/test/**/*.js --timeout 10000"
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mocha": "^8.2.0",
+    "moment": "^2.29.1",
+    "mongoose": "^5.10.11",
+    "node-schedule": "^1.3.2",
+    "nodemon": "^2.0.6",
+    "pipedrive": "^10.4.3",
+    "xmlbuilder": "^15.1.1"
+  }
+}
