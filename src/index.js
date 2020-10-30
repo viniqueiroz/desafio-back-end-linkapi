@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require("express");
 const db = require("./database/config");
 const mongoose = require("mongoose");
+const config = require("./config/app");
 require("./schedules").boot();
 
 class App {
@@ -11,8 +12,8 @@ class App {
     this.database();
     this.middlewares();
     this.routes();
-    this.express.listen(3001, () =>
-      console.log(`Sua API REST está funcionando na porta 3001 em modo ${process.env.NODE_ENV}`)
+    this.express.listen(config.port, () =>
+      console.log(`The App is running on port ${config.port} in ${process.env.NODE_ENV} mode`)
     );
   }
 
@@ -29,6 +30,5 @@ class App {
   routes() {
     this.express.use(require("./routes"));
   }
-
 }
 module.exports = new App().express;
