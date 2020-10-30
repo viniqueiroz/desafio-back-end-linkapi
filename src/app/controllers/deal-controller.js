@@ -60,10 +60,12 @@ function agregateDeals(deals) {
   // Reduces array in another array based on date that deal occurs
   deals.reduce(function (res, current) {
     const orderDate = moment(current.date).format('DD/MM/YYYY');
+    // If the array with this date don't exists the is populated
     if (!res[orderDate]) {
       res[orderDate] = { date: orderDate, value: 0 };
       agregatedDeals.push(res[orderDate])
     }
+    // The total value is increased
     res[orderDate].value += current.value;
     return res;
   }, {});
