@@ -1,8 +1,7 @@
+require('dotenv').config();
 const express = require("express");
 const db = require("./database/config");
 const mongoose = require("mongoose");
-
-require('dotenv').config();
 require("./schedules").boot();
 
 class App {
@@ -18,7 +17,7 @@ class App {
   }
 
   database() {
-    mongoose.connect(db[process.env.NODE_ENV], { 
+    mongoose.connect(db[process.env.NODE_ENV], {
       useNewUrlParser: true, useUnifiedTopology: true
     });
   }

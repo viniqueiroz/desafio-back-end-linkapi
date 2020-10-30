@@ -1,4 +1,4 @@
 module.exports = {
-  test: "mongodb://localhost:27017/teste",
-  development: "mongodb://localhost:27017/desafio-linkapi",
+  test: process.env.TEST_DATABASE_CONNECTION,
+  development: process.env.DATABASE_CONNECTION,
 };

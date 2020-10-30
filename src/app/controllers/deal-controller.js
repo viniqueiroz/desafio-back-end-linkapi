@@ -22,7 +22,7 @@ class DealController {
   }
 
   async show(req, res) {
-    const data = await Deal.findById({ _id: req.params.id }).catch((error) => {
+    const data = await Deal.findById(req.params.id).catch((error) => {
       return res.status(500).send({
         message:
           error.message || "Some error occurred while retrieving deal."
@@ -32,7 +32,7 @@ class DealController {
     if (!data) {
       return res.status(404).send({ message: `Not found Deal with id ${req.params.id}` });
     } else {
-      return data;
+      return res.send(data);
     }
   }
 
