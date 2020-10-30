@@ -10,8 +10,8 @@ class DealController {
 
     return data;
   }
-
   async index(req, res) {
+    // Get all deals
     const data = await Deal.find({}).catch((error) => {
       return res.status(500).send({
         message:
@@ -22,6 +22,7 @@ class DealController {
   }
 
   async show(req, res) {
+    // Find deals by id
     const data = await Deal.findById(req.params.id).catch((error) => {
       return res.status(500).send({
         message:
@@ -37,12 +38,14 @@ class DealController {
   }
 
   async reports(req, res) {
+    // Find all deals
     const data = await Deal.find({}).catch((error) => {
       return res.status(500).send({
         message:
           error.message || "A Error ocurred on retrieve data."
       });
     });
+    // Group the deals
     const deals = agregateDeals(data);
 
     return res.json(deals);
@@ -54,6 +57,7 @@ class DealController {
 
 function agregateDeals(deals) {
   let agregatedDeals = [];
+  // Reduces array in another array based on date that deal occurs
   deals.reduce(function (res, current) {
     const orderDate = moment(current.date).format('DD/MM/YYYY');
     if (!res[orderDate]) {

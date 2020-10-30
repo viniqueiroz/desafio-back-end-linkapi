@@ -11,11 +11,14 @@ class BlingController {
     }
 
     async storeOrders(orders) {
+        // Iterates the orders array
         for (let i = 0; i < orders.length; ++i) {
             const order = orders[i];
+            // Check if that order already gone stored
             const alreadyStored = await Deal.findOne({ pipedrive_id: order.id });
             if (!alreadyStored) {
                 try {
+                    // build the xml with bling orders specifications
                     const xml = this.buildOrderXml(order);
                     const response = await this.makeRequest('/pedido/json', xml);
                     // Created on Bling 
@@ -28,7 +31,7 @@ class BlingController {
                             pipedrive_id: order.id,
                             bling_id: response.data.retorno.pedidos[0].pedido.idPedido
                         };
-
+                        //  Store order locally
                         await DealController.storeDeal(deal);
 
                         console.log(`Order ${order.id} , ${order.person_id.name} successfully synchronized`);

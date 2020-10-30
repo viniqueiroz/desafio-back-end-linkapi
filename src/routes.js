@@ -19,6 +19,7 @@ routes.get("/", function (req, res) {
         },
     ]);
 });
+// Deals routes
 routes.get("/deals/reports", DealController.reports);
 routes.get("/deals", DealController.index);
 routes.get("/deals/:id", DealController.show);

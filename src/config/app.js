@@ -1,3 +1,4 @@
+// App configuration file
 module.exports = {
     pipedriveApiToken: process.env.PIPEDRIVE_API_TOKEN,
     blingApiKey: process.env.BLING_API_KEY,
