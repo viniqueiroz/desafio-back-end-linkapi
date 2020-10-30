@@ -49,7 +49,7 @@ And set then as won
 On Bling, go to 'Pedidos de Venda' and await to new integrated deals
 ![bling order](./src/images/integrated-order.png)
 
-To see the already integrated deals, go to route
+To get the already integrated deals storeds on app, go to route
 ```bash
 /deals
 ```
